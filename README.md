@@ -92,3 +92,15 @@ sudo cp ~/TouchUI-autostart/touchui.default /etc/default/touchui
 sudo update-rc.d touchui defaults
 
 ```
+
+##Known issues
+- TouchUI load-screen freezes if enabled
+- Display won't power save
+
+##TODO
+- Screensaver/power off display
+- Different screen orientations
+- Image to install from
+- Install to internal MMC
+- Scrip to build the image
+- Support for other boards
