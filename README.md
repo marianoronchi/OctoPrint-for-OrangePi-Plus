@@ -64,7 +64,7 @@ ExecStart=-/sbin/agetty --autologin pi --noclear %I $TERM
 Next we are going to make our device to boot in to ToucUI. 
 We need to install some packages.
 ```
-sudo apt-get install --no-install-recommends xinit xinput xserver-xorg xserver-xorg-video-fbdev x11-xserver-utils matchbox 
+sudo apt-get -y install --no-install-recommends xinit xinput xserver-xorg xserver-xorg-video-fbdev x11-xserver-utils matchbox 
 ```
 
 Then create /usr/share/X11/xorg.conf.d/99-fbdev.conf
