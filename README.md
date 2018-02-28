@@ -5,7 +5,7 @@ This is my process so far with Waveshare 7" Capacitive touch screen and Orange P
 
 First you need build latest Armbian (Full image, no desktop, mainline 4.14, default kernel config) with instructions from https://docs.armbian.com/Developer-Guide_Using-Vagrant/
 
-You may need to make the "/Armbian/build/output" directory, before the build will succeed. Don't expect any help from the "friendly" people on Armbian forums. You have to know more about Linux that Torvalds him self to be qualified to ask questions there...
+You may need to make the "/Armbian/build/output" directory, before the build will succeed.
 
 When you have got the image build, flashed and booted you have to make user **pi** and add it to sudoers. This is done easily, by the Armbian on the first start. Setup your network i.e. with nmtui. If you have a (touch)screen you have to set up the correct resolution with Armbian-config. Go to System -> Bootenv and set the correct display_mode for your screen.
 
