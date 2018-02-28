@@ -23,7 +23,7 @@ sudo usermod -a -G tty pi
 sudo usermod -a -G dialout pi
 cd ~
 ```
-Now lets make OctoPrint star automatically.
+Now lets make OctoPrint start automatically.
 ```
 sudo cp ~/OctoPrint/scripts/octoprint.init /etc/init.d/octoprint
 sudo chmod +x /etc/init.d/octoprint
