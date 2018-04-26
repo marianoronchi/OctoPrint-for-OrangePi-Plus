@@ -104,3 +104,43 @@ sudo update-rc.d touchui defaults
 - Install to internal MMC
 - Scrip to build the image
 - Support for other boards
+
+Enable the Camera
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo modprobe gc2035
+sudo modprobe vfe_v4l2
+
+sudo nano /etc/modules
+//AND Add the following lines:
+gc2035
+vfe_v4l2
+mkdir ~/motion
+chmod 777 ~/motion
+sudo apt-get install motion
+
+	
+sudo nano /etc/motion/motion.conf
+Modify the following keys:
+
+target_dir: Specify the destination path of the images. For example / home / pi / motion (previously created)
+stream_localhost: set the parameter to off so that Motion can be accessed from another computer on the local network
+Save with CTRL+X then Y
+
+sudo cp /etc/motion/motion.conf /etc/motion.conf
+
+Allow the Motion daemon to start at startup
+To have Motion start at system startup, you need to modify a last configuration file.
+
+sudo nano /etc/default/motion
+
+Start manually Motion
+Now we can start Motion via its service
+
+sudo /etc/init.d/motion start
+
+After a modification of the configuration file, it will be necessary to restart Motion to take account of the new parameters:
+
+sudo /etc/init.d/motion restart
+
