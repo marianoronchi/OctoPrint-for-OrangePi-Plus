@@ -46,6 +46,26 @@ If you don't have a display or don't want to set up one. You are done. Have a ni
 
 ## Setting up TouchUI and auto login.
 
+To override this, do:
+
+sudo systemctl edit getty@tty1
+And add:
+
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty -a pi --noclear %I $TERM
+[…]
+
+Now:
+
+$ systemctl cat getty@tty1 | grep Exec
+ExecStart=-/sbin/agetty --noclear %I $TERM
+ExecStart=
+ExecStart=-/sbin/agetty -a <USERNAME> --noclear %I $TERM
+And if I do:
+
+sudo systemctl restart getty@tty1
+
 With web browser go to **http://"ip of your device":5000**
 and make the firs time settings. If I remember correctly TouchUI won't work with the user access control enabled.
 Don't forget to install TouchUI from the OctoPrint plugin manager!
