@@ -9,6 +9,12 @@ You may need to make the "/Armbian/build/output" directory, before the build wil
 
 When you have got the image build, flashed and booted you have to make user **pi** and add it to sudoers. This is done easily, by the Armbian on the first start. Setup your network i.e. with nmtui. If you have a (touch)screen you have to set up the correct resolution with Armbian-config. Go to System -> Bootenv and set the correct display_mode for your screen.
 
+En Raspbian:
+Despues del Adduser pi
+echo "vm.mmap_min_addr = 4096" >  /etc/sysctl.d/mmap_min_addr.conf
+
+
+
 ## Now let's install OctoPrint!
 ```
 sudo apt-get update
